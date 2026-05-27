@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "remixicon/fonts/remixicon.css";
-import Leaf1 from "../../img/Leaf1.png";
-import Leaf2 from "../../img/leaf2.png";
+import Leaf1 from "../../img/leaf-1.png";
+import Leaf2 from "../../img/leaf-2.png";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const [active, setActive] = useState("home");
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 50) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div
-      className={` bg-green-950 fixed top-0 left-0 z-50 w-full `}
+      className={` bg-green-950 fixed top-0 left-0 z-50 w-full ${scroll ? "border-b-1 border-yellow-500" : "border-none"}`}
       id="#header"
     >
       <div
@@ -89,7 +104,11 @@ function Header() {
           </div>
         </div>
       </div>
-      
+      <div className={`fixed right-4 ${scroll ? "bottom-4" : "-bottom-1/2"}`}>
+        <a href="#">
+          <i className="ri-arrow-up-line bg-yellow-500 text-2xl p-1 rounded-md"></i>
+        </a>
+      </div>
     </div>
   );
 }
