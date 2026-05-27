@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import Home from "./Components/Section/Home";
 import Service from "./Components/Section/Service";
 import About from "./Components/Section/About";
+import Popular from "./Components/Section/Popular";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Home />
       <Service />
       <About />
+      <Popular />
     </>
   );
 }
