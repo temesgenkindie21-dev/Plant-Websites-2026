@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/jost": "^5.2.8",
+    "@fontsource/lobster": "^5.2.8",
+    "@fontsource/open-sans": "^5.2.7",
+    "@remixicon/react": "^4.9.0",
     "@tailwindcss/vite": "^4.3.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "remixicon": "^4.9.1",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {

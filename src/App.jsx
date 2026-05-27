@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import "remixicon/fonts/remixicon.css";
+import "@fontsource/open-sans";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline bg-amber-500">Hello world!</h1>
-    </div>
-  )
+    <>
+      <Header />
+    </>
+  );
 }
-
-export default App
+export default App;
